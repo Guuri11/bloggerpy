@@ -1,13 +1,32 @@
+import { motion } from 'framer-motion'
 import React from 'react'
+import PropTypes from 'prop-types'
+import { pageVariants } from '../../../utils/animations/animation'
+import { PostInterface } from '../../../utils/interfaces/post'
 import Footer from '../../container/partials/Footer'
 import Header from '../../container/partials/Header'
 
-export default function PostPresentational() {
+type Props = {
+    post: PostInterface
+}
+export default function PostPresentational(props:Props) {
+
     return (
-        <div>
+        <>
             <Header/>
-            Post Page
+            <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+            >
+                Post Page
+            </motion.div>
             <Footer/>
-        </div>
+        </>
     )
+}
+
+PostPresentational.propTypes = {
+    post: PropTypes.object.isRequired
 }

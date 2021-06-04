@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+// Partials
+@import './scss/header.scss';
+@import './scss/footer.scss';
+@import './scss/card/card.scss';
+@import './scss/card/single_card.scss';

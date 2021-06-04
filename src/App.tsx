@@ -1,4 +1,5 @@
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
 import Index from './components/container/pages/Index';

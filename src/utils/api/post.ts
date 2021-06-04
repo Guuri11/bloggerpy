@@ -8,7 +8,7 @@ export const getPosts = async ():Promise<PostInterface[]> => {
 };
 
 export const getPost = async (id:number):Promise<PostInterface> => {
-    const res = await fetch(`${JSON_PLACEHOLDER_DOMAIN}/posts`);
+    const res = await fetch(`${JSON_PLACEHOLDER_DOMAIN}/posts/${id}`);;
     const data = await res.json();
     return data;
 };
