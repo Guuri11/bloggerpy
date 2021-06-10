@@ -6,9 +6,3 @@ export const getUsers = async ():Promise<UserInterface[]> => {
     const data = await res.json();
     return data;
 };
-
-export const getUser = async (id:number):Promise<UserInterface> => {
-    const res = await fetch(`${JSON_PLACEHOLDER_DOMAIN}/$users`);
-    const data = await res.json();
-    return data;
-};
