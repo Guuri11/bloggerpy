@@ -138,16 +138,6 @@ body {
   text-align: center;
 }
 
-.breadcrumb-block {
-  padding-top: 3.57143rem !important;
-  padding-bottom: 3.57143rem !important;
-  margin-bottom: 1.42857rem !important;
-  color: #fff !important;
-  background-size: cover !important;
-  background-position: center;
-  position: relative;
-}
-
 .card-block {
   position: relative;
   padding: 1.5rem;

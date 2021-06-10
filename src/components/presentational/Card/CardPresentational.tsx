@@ -31,9 +31,6 @@ function CardPresentational(props: Props) {
                 <p>{post.body}</p>
             </div>
             <div className="card-utils">
-                <div className="comments">
-                    <span className="fas fa-comments"></span> 12
-                </div>
                 {
                     user && post.userId === user.id ?
                         <div className="delete">
