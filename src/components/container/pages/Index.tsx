@@ -7,6 +7,7 @@ export default function Index() {
 
     const [posts, setPosts] = useState<PostInterface[]>([])
 
+
     useEffect(() => {
         getPosts().then(posts=>setPosts(posts))        
     }, [])
