@@ -6,7 +6,7 @@ import LoginPresentational from '../../presentational/pages/LoginPresentational'
 
 export default function Login() {
 
-    const [email, setEmail] = useState<string>("Rey.Padberg@karina.biz")
+    const [email, setEmail] = useState<string>("Sincere@april.biz")
     const [submited, setSubmited] = useState<Boolean>(false)
     const [error, setError] = useState<Boolean>(false)
     const [success, setSuccess] = useState<Boolean>(false)

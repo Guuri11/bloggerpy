@@ -163,7 +163,7 @@ body {
   transition: 0.2s;
 }
 .card-block .card-user,
-.card-block .card-comments,
+.card-block .card-utils,
 .card-block .card-title {
   margin: 1rem;
 }
@@ -196,7 +196,7 @@ body {
 .card-block .card-body p {
   margin-top: 1rem;
 }
-.card-block .card-comments {
+.card-block .card-utils {
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;
@@ -210,6 +210,12 @@ body {
   user-select: none;
   /* Non-prefixed version, currently
                             supported by Chrome, Edge, Opera and Firefox */
+}
+.card-block .card-utils .comments {
+  float: left;
+}
+.card-block .card-utils .delete {
+  float: right;
 }
 
 /*# sourceMappingURL=App.css.map */

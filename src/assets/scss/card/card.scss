@@ -14,7 +14,7 @@
     }
 
     .card-user,
-    .card-comments,
+    .card-utils,
     .card-title {
         margin: 1rem;
     }
@@ -58,7 +58,7 @@
         }
     }
 
-    .card-comments {
+    .card-utils {
         -webkit-touch-callout: none;
         /* iOS Safari */
         -webkit-user-select: none;
@@ -72,5 +72,13 @@
         user-select: none;
         /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+
+        .comments {
+            float: left;
+        }
+
+        .delete {
+            float: right;
+        }
     }
 }

@@ -45,7 +45,7 @@ export default function LoginPresentational(props: Props) {
                         <Form onSubmit={(event)=> event.preventDefault()}>
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" onChange={handleChangeEmail} value="Rey.Padberg@karina.biz" />
+                                <Form.Control type="email" placeholder="Enter email" onChange={handleChangeEmail} value="Sincere@april.biz" />
                             </Form.Group>
                             <Button variant="primary" onClick={handleSubmit} className="mt-3 primary-background-color">
                                 Submit

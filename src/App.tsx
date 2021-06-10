@@ -7,10 +7,20 @@ import Login from './components/container/pages/Login';
 import { useEffect, useState } from 'react';
 import { UserContext } from './utils/hooks/UserContext';
 import { UserInterface } from './utils/interfaces/user';
+import { PostsContext } from './utils/hooks/PostsContext';
+import { getPosts } from './utils/api/post';
+import { PostInterface } from './utils/interfaces/post';
 
 function App(): JSX.Element {
 
   const [user, setUser] = useState<UserInterface | null>(null)
+  const [posts, setPosts] = useState<PostInterface[]>([])
+
+
+  // retrieve posts
+  useEffect(() => {
+    getPosts().then(posts => setPosts(posts))
+  }, [])
 
   // Get loggued user
   useEffect(() => {
@@ -32,8 +42,10 @@ function App(): JSX.Element {
           <AnimatePresence exitBeforeEnter initial={false}>
             <Switch location={location} key={location.pathname}>
               <UserContext.Provider value={{ user, setUser }} >
-                <Route exact path="/" component={Index} />
-                <Route exact path="/login" component={Login} />
+                <PostsContext.Provider value={{ posts, setPosts }} >
+                  <Route exact path="/" component={Index} />
+                  <Route exact path="/login" component={Login} />
+                </PostsContext.Provider>
               </UserContext.Provider>
             </Switch>
           </AnimatePresence>

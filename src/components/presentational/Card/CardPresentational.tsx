@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import PropTypes from 'prop-types'
 import { PostInterface } from '../../../utils/interfaces/post'
 import { motion } from 'framer-motion';
+import { Button } from 'react-bootstrap';
+import { useUserContext } from '../../../utils/hooks/UserContext';
 
 type Props = {
-    post: PostInterface
+    post: PostInterface,
+    handleDelete: (e: MouseEvent<HTMLElement>)=> void
 }
 
 function CardPresentational(props: Props) {
 
-    const { post } = props;
+    const { user } = useUserContext();
+    const { post, handleDelete } = props;
 
     return (
         <motion.article
@@ -26,10 +30,20 @@ function CardPresentational(props: Props) {
                 <img src="https://source.unsplash.com/random/300x150" alt={post.title} className="img-fluid" />
                 <p>{post.body}</p>
             </div>
-            <div className="card-comments">
+            <div className="card-utils">
                 <div className="comments">
                     <span className="fas fa-comments"></span> 12
                 </div>
+                {
+                    user && post.userId === user.id ?
+                        <div className="delete">
+                            <Button variant="danger" onClick={handleDelete}>
+                                <span className="fas fa-trash"></span> Delete
+                            </Button>
+                        </div>
+                        :
+                        null
+                }
             </div>
         </motion.article>
     )
