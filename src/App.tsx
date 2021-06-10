@@ -10,6 +10,7 @@ import { UserInterface } from './utils/interfaces/user';
 import { PostsContext } from './utils/hooks/PostsContext';
 import { getPosts } from './utils/api/post';
 import { PostInterface } from './utils/interfaces/post';
+import Profile from './components/container/pages/Profile';
 
 function App(): JSX.Element {
 
@@ -45,6 +46,7 @@ function App(): JSX.Element {
                 <PostsContext.Provider value={{ posts, setPosts }} >
                   <Route exact path="/" component={Index} />
                   <Route exact path="/login" component={Login} />
+                  <Route exact path="/profile" component={Profile} />
                 </PostsContext.Provider>
               </UserContext.Provider>
             </Switch>
