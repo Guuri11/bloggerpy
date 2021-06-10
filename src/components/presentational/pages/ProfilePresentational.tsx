@@ -18,7 +18,7 @@ export default function ProfilePresentational(props: Props) {
 
     return (
         <>
-            <Header />
+            <Header defaultActive="profile" />
             <motion.div
                 initial="initial"
                 animate="in"

@@ -5,16 +5,18 @@ import Logo from './Logo'
 import MenuToggle from './MenuToggle'
 
 type Props = {
-    handleLogout: (e: MouseEvent<HTMLElement>) => void
+    handleLogout: (e: MouseEvent<HTMLElement>) => void,
+    defaultActive: string
 }
 
 function HeaderPresentational(props: Props) {
 
-    const [active, setActive] = useState<string>('home')
+    const { handleLogout, defaultActive } = props
+    const [active, setActive] = useState<string>(defaultActive)
     const [toggle, setToggle] = useState<boolean>(false)
     const { user } = useUserContext();
 
-    const { handleLogout } = props
+
 
     const handleActive = (path: string): void => {
         setActive(path)
@@ -39,7 +41,7 @@ function HeaderPresentational(props: Props) {
                                     <li><span onClick={handleLogout}>Logout</span></li>
                                 </>
                                 :
-                                <li><Link to='/login' onClick={() => handleActive('profile')} className={active === "profile" ? "active" : ""} >Log in</Link></li>
+                                <li><Link to='/login' onClick={() => handleActive('login')} className={active === "login" ? "active" : ""} >Log in</Link></li>
                         }
                     </ul>
                 </nav>

@@ -3,10 +3,15 @@ import { useHistory } from 'react-router';
 import { useUserContext } from '../../../utils/hooks/UserContext';
 import HeaderPresentational from '../../presentational/partials/Header/HeaderPresentational';
 
-export default function Header(): JSX.Element {
+type Props = {
+    defaultActive: string
+}
+
+export default function Header(props: Props): JSX.Element {
 
     const { user, setUser } = useUserContext();
     const history = useHistory();
+    const { defaultActive } = props
 
     const handleLogout = (e: MouseEvent<HTMLElement>): void => {
         e.preventDefault();
@@ -19,5 +24,5 @@ export default function Header(): JSX.Element {
 
     }
 
-    return <HeaderPresentational handleLogout={handleLogout} />
+    return <HeaderPresentational defaultActive={defaultActive} handleLogout={handleLogout} />
 }

@@ -18,7 +18,7 @@ export default function IndexPresentational(props: Props) {
 
     return (
         <>
-            <Header />
+            <Header defaultActive="home" />
             <motion.div
                 initial="initial"
                 animate="in"

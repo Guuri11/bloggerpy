@@ -17,7 +17,7 @@ export default function LoginPresentational(props: Props) {
 
     return (
         <>
-            <Header />
+            <Header defaultActive="login" />
             <motion.div
                 initial="initial"
                 animate="in"
