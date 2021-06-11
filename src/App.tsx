@@ -12,11 +12,11 @@ import { getPosts } from './utils/api/post';
 import { PostInterface } from './utils/interfaces/post';
 import Profile from './components/container/pages/Profile';
 
+
 function App(): JSX.Element {
 
   const [user, setUser] = useState<UserInterface | null>(null)
   const [posts, setPosts] = useState<PostInterface[]>([])
-
 
   // retrieve posts
   useEffect(() => {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 type Props = {
     toggle: boolean,
-    handleToggle: any
+    handleToggle: ()=> void
 }
 
 function MenuToggle(props:Props) {

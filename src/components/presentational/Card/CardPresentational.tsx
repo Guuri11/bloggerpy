@@ -27,7 +27,7 @@ function CardPresentational(props: Props) {
                 <h3>{post.title}</h3>
             </div>
             <div className="card-body">
-                <img src="https://source.unsplash.com/random/300x150" alt={post.title} className="img-fluid" />
+                <img src="https://source.unsplash.com/random/300x150" alt={post.title} className="img-fluid" loading="lazy" />
                 <p>{post.body}</p>
             </div>
             <div className="card-utils">

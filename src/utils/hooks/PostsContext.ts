@@ -2,7 +2,7 @@ import { createContext, useContext } from "react"
 import { PostInterface } from "../interfaces/post"
 
 export type PostType = {
-    posts: Array<PostInterface>|[]
+    posts: Array<PostInterface>
     setPosts:(posts: Array<PostInterface>|[]) => void
   }
 
