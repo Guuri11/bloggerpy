@@ -1,25 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { AnimatePresence } from 'framer-motion';
+import Index from './components/container/pages/Index';
+import Login from './components/container/pages/Login';
+import { useEffect, useState } from 'react';
+import { UserContext } from './utils/hooks/UserContext';
+import { UserInterface } from './utils/interfaces/user';
+import { PostsContext } from './utils/hooks/PostsContext';
+import { getPosts } from './utils/api/post';
+import { PostInterface } from './utils/interfaces/post';
+import Profile from './components/container/pages/Profile';
 
-function App() {
+function App(): JSX.Element {
+
+  const [user, setUser] = useState<UserInterface | null>(null)
+  const [posts, setPosts] = useState<PostInterface[]>([])
+
+
+  // retrieve posts
+  useEffect(() => {
+    getPosts().then(posts => setPosts(posts))
+  }, [])
+
+  // Get loggued user
+  useEffect(() => {
+    if (localStorage.getItem('user')) {
+      try {
+        // Parsing localStorage value to object, as it needs a string, if localstorage.user is null, return empty string,
+        // eatherway, as we can only pass a UserInterfacer | null, if the parse is empty, return null
+        setUser(JSON.parse(localStorage.getItem('user') ?? "") ?? null);
+      } catch (error) {
+        setUser(null);
+      }
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route
+        render={({ location }) => (
+          <AnimatePresence exitBeforeEnter initial={false}>
+            <Switch location={location} key={location.pathname}>
+              <UserContext.Provider value={{ user, setUser }} >
+                <PostsContext.Provider value={{ posts, setPosts }} >
+                  <Route exact path="/" component={Index} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/profile" component={Profile} />
+                </PostsContext.Provider>
+              </UserContext.Provider>
+            </Switch>
+          </AnimatePresence>
+        )}
+      />
+    </Router>
   );
 }
 

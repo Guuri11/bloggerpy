@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.primary-color {
+  color: #0A91AB;
+}
+
+.secondary-color {
+  color: #FFC045;
+}
+
+.primary-background-color {
+  background-color: #0A91AB;
+}
+
+.secondary-background-color {
+  background-color: #FFC045;
+}
+
+.main-header {
+  position: relative;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.main-header .menu-toggle {
+  display: none;
+}
+.main-header .logo {
+  height: 70px;
+  padding: 0 20px;
+  float: left;
+}
+.main-header nav {
+  float: right;
+}
+.main-header nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.main-header nav ul li {
+  list-style: none;
+}
+.main-header nav ul li a, .main-header nav ul li span {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #262626;
+}
+.main-header nav ul li a.active, .main-header nav ul li a:hover, .main-header nav ul li span.active, .main-header nav ul li span:hover {
+  background-color: #0A91AB;
+  color: #fff;
+  transition: 0.3s;
+}
+.main-header nav ul li span {
+  cursor: pointer;
+}
+.main-header .clearfix {
+  clear: both;
+}
+
+@media (max-width: 1200px) {
+  .main-header {
+    margin: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .main-header .menu-toggle {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    float: right;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    color: #0A91AB;
+  }
+  .main-header nav {
+    display: none;
+  }
+  .main-header nav.active {
+    display: block;
+    width: 100%;
+  }
+  .main-header nav.active ul {
+    display: block;
+  }
+  .main-header nav.active ul a, .main-header nav.active ul li span {
+    margin: 0;
+  }
+}
+/* login */
+.login-container {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.login-form-1 {
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3 {
+  text-align: center;
+  color: #333;
+}
+
+.login-container form {
+  padding: 5%;
+}
+
+.btnSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+}
+
+.login-form-1 .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #0A91AB;
+}
+
+.login-form-1 .no-registered {
+  color: #0A91AB;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-spinner {
+  text-align: center;
+}
+
+.card-block {
+  position: relative;
+  padding: 1.5rem;
+  border-width: 1px;
+  border-radius: 1rem;
+  border: 1px solid rgba(167, 178, 206, 0.5);
+  background-color: #fbfcfc;
+  min-height: 600px;
+  margin: 1rem 0;
+}
+.card-block:hover {
+  border: 2px solid rgba(190, 197, 214, 0.5);
+  transition: 0.2s;
+}
+.card-block .card-user,
+.card-block .card-utils,
+.card-block .card-title {
+  margin: 1rem;
+}
+.card-block .card-user {
+  font-size: 14px;
+}
+.card-block .card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+  min-height: 69px;
+}
+.card-block .card-title h3 {
+  font-weight: bolder;
+  font-size: 1.4625rem;
+  line-height: 1.975rem;
+  text-decoration: none;
+  color: initial;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.card-block .card-body img {
+  border-radius: 0.75rem;
+  width: 100%;
+  height: 100%;
+}
+.card-block .card-body p {
+  margin-top: 1rem;
+}
+.card-block .card-utils {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                            supported by Chrome, Edge, Opera and Firefox */
+}
+.card-block .card-utils .delete {
+  float: right;
+}
+
+/*# sourceMappingURL=App.css.map */

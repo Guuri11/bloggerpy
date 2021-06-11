@@ -1,0 +1,1 @@
+export const JSON_PLACEHOLDER_DOMAIN: string = "https://jsonplaceholder.typicode.com"

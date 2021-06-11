@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// Partials
+@import './scss/colors.scss';
+
+.primary-color {
+  color: $primary-color;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+.primary-background-color {
+  background-color: $primary-color;
+}
+
+.secondary-background-color {
+  background-color: $secondary-color;
+}
+
+@import './scss/header.scss';
+@import './scss/login.scss';
+@import './scss/card/card.scss';
