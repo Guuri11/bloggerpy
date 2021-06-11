@@ -12,3 +12,5 @@ export const UserContext = createContext<UserType>({
 })
 
 export const useUserContext = () => useContext(UserContext)
+
+export default UserContext;

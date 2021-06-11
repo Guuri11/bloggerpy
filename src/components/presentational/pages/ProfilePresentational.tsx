@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react'
 import { Col, Row } from 'react-bootstrap';
-import { Redirect } from 'react-router';
 import { pageVariants } from '../../../utils/animations/animation';
 import { useUserContext } from '../../../utils/hooks/UserContext'
 import { PostInterface } from '../../../utils/interfaces/post';
